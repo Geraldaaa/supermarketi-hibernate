@@ -1,7 +1,6 @@
 package com.supermarket.repository;
 
 import com.supermarket.entity.Customer;
-import com.supermarket.entity.Product;
 import com.supermarket.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -29,7 +28,6 @@ public class CustomerRepository {
         Transaction t=null;
         try(Session s= HibernateUtil.getSessionFactory().openSession()){
             t=s.beginTransaction();
-            s.merge(c);
             s.update(c);
             t.commit();
 
