@@ -36,4 +36,18 @@ public class CustomerRepository {
             e.printStackTrace();}
     }
 
+
+    public void deleteCustomer(Customer c){
+
+        Transaction t=null;
+        try(Session s= HibernateUtil.getSessionFactory().openSession()){
+            t=s.beginTransaction();
+            s.delete(c);
+            t.commit();
+
+        } catch(Exception e){
+            if(t!=null)t.rollback();
+            e.printStackTrace();}
+    }
+
 }

@@ -21,7 +21,7 @@ public class Main {
         Customer c4 = new Customer("Ani","ani@gmail.com","0696069000","Librazhd");
         CustomerRepository cr = new CustomerRepository();
         cr.shtoCustomer(c4);
-        c4.setEmail("aniUpdate@gmail.com");
+        c4.setEmail("aniUpdat@gmail.com");
         cr.updateCustomer(c4);
 
         Order o3 = new Order(c4);

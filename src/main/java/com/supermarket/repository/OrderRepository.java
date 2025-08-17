@@ -38,6 +38,21 @@ public class OrderRepository {
             e.printStackTrace();}
     }
 
+    public void fshiOrder(Order or){
+
+        Transaction t=null;
+        try(Session s= HibernateUtil.getSessionFactory().openSession()){
+            t=s.beginTransaction();
+            s.delete(or);
+            t.commit();
+
+        } catch(Exception e){
+            if(t!=null)t.rollback();
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 }

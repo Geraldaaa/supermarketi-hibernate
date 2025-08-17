@@ -22,14 +22,25 @@ public class OrderItemRepository {
 
 
 
-
-
     public void updateOrderItems(OrderItem item){
 
         Transaction t=null;
         try(Session s= HibernateUtil.getSessionFactory().openSession()){
             t=s.beginTransaction();
             s.update(item);
+            t.commit();
+
+        } catch(Exception e){
+            if(t!=null)t.rollback();
+            e.printStackTrace();}
+    }
+
+    public void fshiOrderItem(OrderItem item){
+
+        Transaction t=null;
+        try(Session s= HibernateUtil.getSessionFactory().openSession()){
+            t=s.beginTransaction();
+            s.delete(item);
             t.commit();
 
         } catch(Exception e){

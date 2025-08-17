@@ -35,4 +35,20 @@ public class ProductRepository {
             if(t!=null)t.rollback();
             e.printStackTrace();}
     }
+
+
+
+    public void fshiProdukt(Product p){
+
+        Transaction t=null;
+        try(Session s= HibernateUtil.getSessionFactory().openSession()){
+            t=s.beginTransaction();
+            s.delete(p);
+            t.commit();
+
+        } catch(Exception e){
+            if(t!=null)t.rollback();
+            e.printStackTrace();}
+    }
+
 }
