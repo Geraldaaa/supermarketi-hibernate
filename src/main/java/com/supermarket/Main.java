@@ -17,21 +17,25 @@ public class Main {
         Product p6 = new Product("kos", 100.0,1000,"ushqim");
         ProductRepository pr = new ProductRepository();
        // pr.save(p6);
+       // pr.lexoProduct();
 
         Customer c4 = new Customer("Ani","ani@gmail.com","0696069000","Librazhd");
         CustomerRepository cr = new CustomerRepository();
-        cr.shtoCustomer(c4);
-        c4.setEmail("aniUpdat@gmail.com");
-        cr.updateCustomer(c4);
+       // cr.shtoCustomer(c4);
+        //c4.setEmail("aniUpdat@gmail.com");
+       // cr.updateCustomer(c4);
+     //   cr.lexoCustomer();
 
         Order o3 = new Order(c4);
         OrderRepository or = new OrderRepository();
-      //  or.shtoOrder(o3);
+     //  or.shtoOrder(o3);
+       // or.fshiOrder(o3);
+       // or.lexoOrders();
 
         OrderItem item2 = new OrderItem(o3,p6,6,800.0);
         OrderItemRepository oires = new OrderItemRepository();
        // oires.shtoItems(item2);
-
+       // oires.lexoOrderItems();
 
 
     }

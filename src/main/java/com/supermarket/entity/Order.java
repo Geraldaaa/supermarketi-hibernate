@@ -110,4 +110,17 @@ public class Order {
     public void setItems(List<OrderItem> items) {
         this.items = items;
     }
+
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", customer=" + customer +
+                ", orderDate=" + orderDate +
+                ", status=" + status +
+                ", total=" + total +
+                ", items=" + items +
+                '}';
+    }
 }
