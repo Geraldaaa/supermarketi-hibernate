@@ -1,6 +1,7 @@
 package com.supermarket.repository;
 
 import com.supermarket.entity.Order;
+import com.supermarket.entity.OrderItem;
 import com.supermarket.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -80,6 +81,29 @@ public class OrderRepository {
 
 
 
-
+//    public void addItem(Long orderId, OrderItem item) {
+//        Transaction t = null;
+//        try (Session s = HibernateUtil.getSessionFactory().openSession()) {
+//            t = s.beginTransaction();
+//
+//            Order order = s.get(Order.class, orderId);
+//            if (order != null) {
+//                order.getItems().add(item);
+//                item.setOrder(order);
+//
+//                order.calculateTotal();
+//                s.persist(item);
+//                s.merge(order);
+//            }
+//
+//            t.commit();
+//        } catch (Exception e) {
+//            if (t != null) t.rollback();
+//            e.printStackTrace();
+//        }
+//    }
 }
+
+
+
 

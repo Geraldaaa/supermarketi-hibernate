@@ -1,7 +1,6 @@
 package com.supermarket.repository;
 
 import com.supermarket.entity.Customer;
-import com.supermarket.entity.OrderItem;
 import com.supermarket.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -74,4 +73,8 @@ public class CustomerRepository {
         }
         return customer;
     }
+
+
+
+
 }

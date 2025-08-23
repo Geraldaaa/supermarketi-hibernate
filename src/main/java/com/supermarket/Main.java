@@ -9,33 +9,38 @@ import com.supermarket.repository.OrderItemRepository;
 import com.supermarket.repository.OrderRepository;
 import com.supermarket.repository.ProductRepository;
 
-
 public class Main {
     public static void main(String[] args) {
 
 
-        Product p6 = new Product("kos", 100.0,1000,"ushqim");
         ProductRepository pr = new ProductRepository();
-       // pr.save(p6);
-       // pr.lexoProduct();
-
-        Customer c4 = new Customer("Ani","ani@gmail.com","0696069000","Librazhd");
         CustomerRepository cr = new CustomerRepository();
-       // cr.shtoCustomer(c4);
-        //c4.setEmail("aniUpdat@gmail.com");
-       // cr.updateCustomer(c4);
-     //   cr.lexoCustomer();
-
-        Order o3 = new Order(c4);
         OrderRepository or = new OrderRepository();
-     //  or.shtoOrder(o3);
-       // or.fshiOrder(o3);
-       // or.lexoOrders();
+        OrderItemRepository oi = new OrderItemRepository();
 
-        OrderItem item2 = new OrderItem(o3,p6,6,800.0);
-        OrderItemRepository oires = new OrderItemRepository();
-       // oires.shtoItems(item2);
-       // oires.lexoOrderItems();
+
+        Product p1 = new Product("Uje", 50.0, 100, "Pije");
+        Product p2 = new Product("Kastravec", 60.0, 500, "Ushqim");
+        pr.save(p1);
+        pr.save(p2);
+
+        Customer c1 = new Customer("Geralda", "geralda@gmail.com", "0696069999", "Durres");
+        cr.shtoCustomer(c1);
+
+        Order o1 = new Order(c1);
+        or.shtoOrder(o1);
+
+        OrderItem item1 = new OrderItem(o1, p1, 2, p1.getPrice());
+        OrderItem item2 = new OrderItem(o1, p2, 3, p2.getPrice());
+        oi.shtoItems(item1);
+        oi.shtoItems(item2);
+        oi.lexoOrderItems();
+
+
+        System.out.println("--- Porositë ---");
+        or.lexoOrders();
+
+
 
 
     }

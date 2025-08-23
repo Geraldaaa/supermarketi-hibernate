@@ -30,6 +30,10 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> items = new ArrayList<>();
 
+//    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<OrderItem> items = new ArrayList<>();
+
+
     public Order() {}
 
 
@@ -116,7 +120,7 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", customer=" + customer +
+                ", customer=" + customer.getName() +
                 ", orderDate=" + orderDate +
                 ", status=" + status +
                 ", total=" + total +

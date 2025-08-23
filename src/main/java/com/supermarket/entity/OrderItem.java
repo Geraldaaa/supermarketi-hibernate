@@ -77,4 +77,14 @@ public class OrderItem {
     public void setPriceAtPurchase(Double priceAtPurchase) {
         this.priceAtPurchase = priceAtPurchase;
     }
+
+    @Override
+    public String toString() {
+        return "OrderItem{" +
+                "product=" + product.getName() +
+                ", quantity=" + quantity +
+                ", priceAtPurchase=" + priceAtPurchase +
+                '}';
+    }
+
 }
